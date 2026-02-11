@@ -19,7 +19,9 @@ app.get('/', (req, res) => {
 
 app.use("/cibo", router)
 
+app.use(notFound);
 
+app.use(errorsHandler);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
