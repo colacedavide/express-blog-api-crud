@@ -57,7 +57,10 @@ function update(req, res) {
             message: "Cibo non trovato"
         });
     }
-
+    cib.title = req.body.title;
+    cib.content = req.body.content;
+    cib.image = req.body.image;
+    cib.tags = req.body.tags;
 
     res.json({
         post: cib,
