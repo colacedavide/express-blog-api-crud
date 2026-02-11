@@ -84,7 +84,17 @@ function destroy(req, res) {
             message: "Questo cibo non esiste"
         })
     }
+    const NuovoID = cibo[cibo.length - 1].id + 1;
 
+    const newPost = {
+        id: NuovoID,
+        title: req.body.title,
+        content: req.body.content,
+        image: req.body.image,
+        tags: req.body.tags,
+    };
+
+    cibo.push(newPost);
 
     cibo.splice(cibo.indexOf(post), 1);
 
